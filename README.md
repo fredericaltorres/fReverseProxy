@@ -5,6 +5,7 @@ Sample creating a .NET Core / C# Reverse Proxy with library [ProxyKit](https://g
 
 ### The project AWebApi implements the endpoint
 Url: `https://localhost:44343/api/values2`
+
 Response:
 ```JSON
 [ "FRED","value2","7/17/2019","7/17/2019 10:36:42 PM" ]

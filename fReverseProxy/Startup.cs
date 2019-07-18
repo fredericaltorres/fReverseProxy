@@ -72,14 +72,14 @@ namespace fReverseProxy
                 var response = await context
                     .ForwardTo(forwardToUrl)
                     .AddXForwardedHeaders()
-                    .AddTutuHeader()
-                    .Send();
+                    .AddTutuHeader() // Add the tutu header
+                    .Send(); // Forward the request
 
-                // Change JSON reponse on the fly
+                // Update the JSON response on the fly
                 var content = await response.Content.ReadAsStringAsync();
                 response.Content = new StringContent(content.Replace("]", @", ""added-on-the-fly"" ] "));
 
-                // Add a header after the request has been processed
+                // Add an new header after the request has been processed
                 response.Headers.Add("HeaderFinal", "123");
 
                 // Remove header after the request has been processed
